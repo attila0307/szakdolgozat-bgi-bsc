@@ -1,0 +1,49 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper,12pt]{article}
+
+% Set margins
+\usepackage[hmargin=3cm, vmargin=3cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Enumeration
+\usepackage{enumitem}
+
+% Links
+\usepackage{hyperref}
+
+\linespread{1.2}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\section*{Summary}
+
+This work presents the topic of artistic filters, their mathematical foundations, and some of my own filter implementations. 
+
+This is my first time working with image processing algorithms. I was always interested in how they work. In the first couple of months, I did background research about algorithms and their mathematical background. I have shown the results of this research in Chapter 3. 
+
+I have designed and implemented four filters for cartoon, pencil and painting-like filtering. These filters take both theoretical and practical aspects into consideration. I have used the available literature, but the filters are based on my original ideas. Background research was conducted, mathematical formulas were given, and appropriate software tools were found for the implementation. 
+
+I have never used the OpenCV library before. The usage of the C++ programming language seems to be the proper solution. (Initially, I started to code in C, but some algorithms are implemented in C++, which were necessary for my filters.) The algorithms of the library are easy to use, as we can see in Chapter 5. I have provided the appropriate parameters and reached the desired operation. 
+
+I have checked the calculation time of the filtering steps, revealing the time consuming filtering operations. Some aspects of the video and real-time image processing require further research and development. The vibrating noise in the videos (as mentioned in Chapter 6 and can be checked by running the software) should be also filtered. I have proposed some solutions for reducing this type of noise, but their detailed consideration is out of the scope of this work.
+
+\end{document}

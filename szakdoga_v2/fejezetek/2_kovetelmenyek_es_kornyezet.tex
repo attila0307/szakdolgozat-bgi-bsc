@@ -1,0 +1,71 @@
+% !TEX encoding = UTF-8 Unicode
+
+\Chapter{Követelmények és környezet}
+
+
+\hspace{12.5mm}A Földön élő emberek túlnyomó része rendelkezik valamilyen infokommunikációs eszközzel és a teljes lakosság 53,6\%-a kapcsolódik az internethez. Ez az arány a Földet tekintve csekélynek mondható, különösképp azért, mert jelenleg már a negyedik ipari forradalom zajlik, de az érték azért ilyen alacsony, mert az ún. fejletlen-, fejlődő- és fejlett országok között óriási technológiai és fejlettségi szakadékok vannak. Afrikában ez az arány 18\%, itt az emberek általában iskolákban, egyetemeken, nyilvános helyeken vagy közösségi házakban férnek hozzá az internethez, míg Európában ez az érték 84,2\%, tehát már a ,,veteránok'' és a ,,baby-boomerek'' között is jócskán akadnak, akik alkalmazzák a technológiát, még akkor is, ha ők a legmesszebbről érkezett digitális bevándorlók \cite{itu_ict_fac_fig_2017}.\par
+
+\setlength{\parindent}{12.5mm}Az Európai Unió több tagállamában, többek közt Magyarországon is kötelezővé vált az elektronikus számlázás, így a vállalkozásnak rendelkeznie kell egy  elektronikus számlát kezelő és kibocsátó szoftverrel \cite{nav_online_szla}, ám ez még nem jelenti azt, hogy minden vállalkozás tulajdonában van olyan alkalmazás is, amellyel a nyilvántartást, logisztikát hatékonyan tudják kezelni. Mivel a világ elindult az egységes digitalizáció útján - nem csak a szórakozás, hanem a munkavégzés terén is -, és a tendencia is jó irányba halad, ezért egy átlátható és hatékony megoldást hoztam létre a fejlődés útjára lépő vállalkozások számára.\par
+
+\setlength{\parindent}{12.5mm}Az adatmodellek, sémák és az üzleti logika kalakításakor több meglévő, nem digitális alapon működő nyilvántartást vettem alapul, így az átállás nem jár a meglévő készletek jelentős átcsoportosításával, esetleg néhány kisebb, logikai változás történik. A kezdeti adatfeltöltés időigényes művelet, de használat közben rövid időn belül belátják majd, hogy a jól strukturált adatkezelés, a gyors válaszidők, a hatékony keresési és szűrési funkciók jelentősen felgyorsítják és hatkonyabbá teszik a munkavégzést, hamar megtérül az adatbevitelbe fektetett idő és energia.\par
+
+\setlength{\parindent}{12.5mm}Az adatbáziskezelő szoftver jelenleg a termelő- és kereskedő vállalatok részére specializált, de az alapvető üzleti logika és szoftveres megoldás nem csak ezen területnek felel meg, így igény szerint más területen is alkalmazható, többek közt szolgáltató, pénzügyi, fuvarozó, vendéglátó és logisztikai vállalatoknál is. A szoftverbe és az adatbázisba implementált eljárások a megrendelő igénye szerint paraméterezhetőek, maximálisan a vállalat működésére szabható megoldások létrehozásával.\par
+
+
+\Section{Követelmények}
+
+A szoftverrel szemben támasztott alapvető követelmények:
+\begin{itemize}
+\item grafikus megjelenési felület,
+\item könnyen értelmezhető, felhasználóbarát megjelenés,
+\item gombok és menük alkalmazása, parancssor mellőzése
+\item egy adatbázissal történő valós idejű, oda-vissza irányú kommunikáció,
+\item az adatbázishoz kapcsolódás felhasználónévvel és jelszóval történő védelme (beléptetőrendszer),
+\item felkész- és késztermékek közös táblában történő tárolása, megkülönböztetésük egy mező értékével,
+\item bekerülési (bruttó) árból számított nettó, eladási és akciós ár számítása előre meghatározott matematikai képletekkel,
+\item a számított értékek védettsége,
+\item tetszés szerint választható „akciós” termékek nyilvántartása és lehetőség csak ezen termékek megjelenítésére,
+\item események részletes naplózása,
+\item napló védelme (utólag nem módosítható, nem törölhető),
+\item a megjelenített adatok közötti, egyszerre több érték szerinti szűrésének lehetősége,
+\item keresés az adatbázis elemei közt, egyszerre több mező értékének figyelembevételével,
+\item a megjelenített adatok tetszés szerinti rendezésének lehetősége,
+\item a megjelenített táblázatok futási időben történő, tetszés szerinti átrendezése,
+\item a felhasználó által bevitt adatok ellenőrzése mind adatbázis, mind szoftver oldalról,
+\item esetleges helytelen/hibás beviteli adatok esetén a hibás mező(k) jelölése, segítség a helyes szintaktikához,
+\item a program, az adatbázis és az adatkapcsolat által létrejött hibák kezelése.
+\end{itemize}
+\newpage
+
+\Section{Környezet}
+A fejlesztés kezdetén logikailag kellett megterveznem a szoftver működését, és ennek megfelelően kellett megválasztanom a hozzá szükséges környezetet. Ez magában foglalja a futtató operációs rendszert, a fejlesztés során használt programozási nyelvet, a futtatáshoz szükséges keretrendszert, a fejlesztői környezetet, valamint az adatbáziskezelő rendszert. Mivel Magyarországon az elmúlt egy évben és azt megelőzően is magabiztosan uralja a piacot a Microsoft Windows operációs rendszere \cite{statcounter_os_market_share}, valamint saját munkáimra és tanulmányaim alatt is jellemzően ezt az operációsrendszert használtam, így a választásom egyértelmű volt.
+
+\SubSection{C\#}
+A program készítésekor C\# nyelvet használtam, választásom azért esett erre, mert már egyetemi tanulmányaim előtt is használtam ezt a nyelvet, és a BSc alatt is ez volt a választott objektum-orientált programozási nyelvem, valamint a témavezetőm és általam kijelölt célok megvalósítására is alkalmas.\par
+A C\# egy erősen típusos, normatív, objektum-orientált programozási nyelv, amelynek alapjául a C++ és a Java szolgált. A fejlesztéskor a Microsoft a C++ hatékonyságát, a Visual Basic kezelhetőségét és a Java platform-függetlenségét próbálta ötvözni, amely sikerült is, 2000-ben, a Professional Development Conference-en mutatták be először a nyilvánosság előtt, és megjelenése óta már a hetedik verziónál jár. Minden verzió számos újítással érkezett, többek között a párhuzamos programozás támogatásával. Megjegyzendő, hogy a C\# fejlesztésének vezetője a kezdetektől az az Anders Hejlsberg, aki a Turbo és Borland Pascal, valamint a Delphi létrehozásakor főmérnökként dolgozott a Borlandnál. A nyelv olyan széles körben alkalmazott, hogy néhány hónappal megjelenése után, 2001 decemberében már szabványosították, erről az Európai informatikai és kommunikációs rendszerek szabványosítási szövetsége ECMA-334 \cite{ecma_334_c_sharp} kódnévvel ellátott publikációjában olvashatunk, valamint 2003 óta ISO szabvány is lett, erről jelenleg a Nemzetközi Szabványügyi Szervezet ISO/IEC 23270:2006 \cite{iso_iec_c_sharp_2006} szabványának hivatalos kiadványában találunk bővebb információt, de a köeljövőben felváltja majd egy új változat, ami a kurrens újításokat is tartalmazza, ez a későbbiekben ISO/IEC DIS 23270 \cite{iso_iec_dis_c_sharp_future} néven lesz megtalálható .\par
+
+\SubSection{.NET Core Command-Line Interface (CLI)}
+A már említett, 2000-es Professional Development Conference-en a C\#-pal együtt a .NET Core Command-Line Interface (a továbbiakban .NET) keretrendszer is megjelent, ami alapfeltétel a C\#-ban írt programok futtatásához. A Visual Studio 6.0 megjelenése óta a Microsoft nem a Win32 környezetben, hanem a .NET környezetben futtatja programjait, utalva ezzel a hálózati munka integrálására, amit az általam készített program is használ. A keretrendszer a használt fejlesztőkörnyezetnek fordítási idejű szolgáltatásokat végez, és az így lefordított alkalmazásoknak futási idejű környezetet biztosít, valamint az alkalmazások számára a már nem használt objektumok memóriabeli felszabadítását automatikusan elvégzi a Garbage Collector (szemétgyűjtő) használatával. A fordító a forráskódot nem natív, hanem egy köztes kódra fordítja le. Ez a köztes kód az MSIL (Microsoft Intermediate Language), ezt továbbfejlesztve, a Visual Studio 2015-ben hivatalosan is megjelent a .NET Compiler Platform (Roslyn), ami a Visual Basic-hez és C\#-hoz készült új, fordítói platform, ami közvetlenül a kódanalízist szolgálja, valamint készíthető vele különálló Form alkalmazás, amely a forráskódkezelő eszközökhöz kapcsolódva forráskódok megfigyelésére, statisztikáinak létrehozására használható.\par
+
+A keretrendszer az alkalmazások típusai szerint több csoportba sorolja az osztálykönyvtárakat, most csak azokat említem, amelyeket érint az alkalmazásom:
+\begin{itemize}
+\item ADO.NET: Adatbázisrendszerek, és a hozzájuk tartozó driverek menedzselése és használata, valamint az adatkapcsolat kiépítése és működtetése
+\item Windows Form: Windows alapú felhasználói könyvtár, grafikus felhasználói felülettel rendelkező ablakok létrehozásához
+\end{itemize}
+A .NET keretrendszert is szabványosították Common Language Infrastructure (CLI) néven, ez az Európai informatikai és kommunikációs rendszerek szabványosítási szövetségénél az ECMA-335 kódnevet kapta \cite{ecma_335_cli_dotnet} és a Nemzetközi Szabványügyi Szervezet az ISO/IEC 23271:2012 \cite{iso_iec_cli_dotnet_2012} kódszámmal jelölte, amikből egyértelműen látszik, hogy a C\# és .NET szoros kapcsolatban állnak, kódszámaik közvetlenül egymást követik.
+
+A szoftver futtatásához szükséges, feljebb említett keretrendszer a Windows Update-ből, és a MSDN-ről is elérhető, valamint a mellékelt lemezen is megtalálható a jelenleg legújabb, 4.7.2 verzió offline telepítője az \texttt{InstallMeFirst\textbackslash NET472} könyvtárban, \texttt{NDP472-KB4054530-x86-x64-AllOS-ENU.exe} néven.\par
+
+\SubSection{Microsoft Visual Studio 2015 Update 3}
+Elsősorban az objektum-orientált szemléletmód és az Oracle adatbázissal történő megfelelő, robosztus működés volt a szempont a fejlesztői környezet kiválasztásakor. A környezet és a driverek megfelelő beállításainak elvégzése után a kapcsolat szilárd és a Visual Studio is megfelelően kezel minden, Oracle-lel kapcsolatos metódust.\par
+A Visual Studio 2015 már több, mint 15 nyelvet támogat, és már nem csak Windows platformra lehet fejleszteni, hanem többek közt Azure, Android, iOS rendszerekre is, amellyel a alkalmazásom továbbgondolása esetén, és a jelenleg zajló negyedik ipari forradalom jegyében az adatbázis (legyen szó konkrétan készletezésről, leltárról, vagy bármilyen logisztikai műveletről) egy mobil eszközről elérhető úgy, hogy közben a felhasználó fizikailag ott van a raktárban, és az eszköz segítségével, egyedi azonosítókat használva valós időben, valós adatokkal dolgozhat, ide értve a készletfeltöltést – akár vonalkód szkenneléssel –, ellenőrzést, keresést, kivételezést.\par
+
+\SubSection{SQL}
+Az SQL (Structured (English) Query Language) egy struktúrált, kötött szintaxisú, angol kulcsszavakon alapuló (nem csak) lekérdező programnyelv, amelyet minden jelentősebb relációs adatbáziskezelő rendszer használ (Microsoft SQL, Oracle Database, MySQL, PostgreSQL) \cite{kovacs_laszlo_adatbazisok}. A nyelvet a webes alkalmazások mellett számos PC-n futó adatbáziskezelő is alkalmazza, a nyelv olyan gyorsan bővül és fejlődik, hogy a jelenleg legújabb, ISO/IEC 9075:2016 \cite{iso_iec_sql} szabvány az azt megelőzőhöz képest öt év alatt 44 új funkcióval bővült \cite{whats_new_in_sql}.
+
+
+\SubSection{Oracle Database Express Edition 11g Release 2}
+Az Oracle Database Express Edition az Oracle egyik ingyenes relációs adatbáziskezelője, amely nem csak konzolos, hanem webes interfésszel is rendelkezik, így a fejlesztés is könnyebb, és a felhasználók is relatíve könnyen, egyszerűen kezelhetik az adatbázist. Néhány adminisztrációval kapcsolatos feladathoz szükséges némi parancssori ismeret, de mivel a szoftver kiváló dokumentációkkal rendelkezik, az esetleges nehézségek is megoldhatóak. Mivel az Oracle rendelkezik olyan illesztőprogramokkal, amelyek a fejlesztőkörnyezettel kommunikálnak, így a webes felület elhagyható, elegendő egy ablakban történő kliens-szerver kapcsolat is, amely mellett - többek közt – a jóval kisebb memóriahasználat és az alacsonyabb erőforrásigény szól.\par
+A tanulmányaim alatt az Adatbáziskezelés I-II. tantárgyakból az Oracle Database Express Edition adatbáziskezelő rendszert használtam, így számos funkcióját megismerhettem, megtanultam a kliens oldal használatát, különböző eljárásokat. A szakdolgozatomhoz szükséges szerver oldal konfigurációját pedig magam kellett elsajátítanom, a rendelkezésre álló dokumentációból (megjegyzendő, hogy az Oracle dokumentációi kiemelkedően jók és részletesek), így végül egy jól működő rendszert tudtam használni úgy, hogy mind a szerver, mind a kliens oldal működését a megfelelő szinten elsajátítottam.\par
+
+
